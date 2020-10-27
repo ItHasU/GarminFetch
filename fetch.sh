@@ -15,17 +15,17 @@ function connect() {
         USERNAME=`jq -r .email ${CONFIG}`
         PASSWORD=`jq -r .password ${CONFIG}`
         MIN_DATE=`jq -r .min_date ${CONFIG}`
-        if [[ ${USERNAME} == "" ]]
+        if [[ ${USERNAME} == "" || ${USERNAME} == "null" ]]
         then
             echo "invalid email"
             exit 1
         fi
-        if [[ ${PASSWORD} == "" ]]
+        if [[ ${PASSWORD} == "" || ${PASSWORD} == "null" ]]
         then
             echo "invalid password"
             exit 1
         fi
-        if [[ ${MIN_DATE} == "" ]]
+        if [[ ${MIN_DATE} == "" || ${MIN_DATE} == "null" ]]
         then
             echo "invalid min_date"
             exit 1
