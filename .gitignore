@@ -1,0 +1,3 @@
+# Never commit this file, it would expose your password
+config.json
+errors.log
